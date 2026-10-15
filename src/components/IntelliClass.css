@@ -1,0 +1,38 @@
+.band {
+  background: var(--black-2);
+  color: #fff;
+}
+
+.band :focus-visible {
+  outline-color: var(--neon);
+}
+
+.band .lead {
+  color: var(--on-dark);
+}
+
+.band .btn {
+  margin-top: 28px;
+}
+
+.classes {
+  display: grid;
+  gap: 16px;
+}
+
+.classes > div {
+  border: 1px solid var(--line-dark);
+  border-radius: var(--r);
+  padding: 22px 24px;
+  background: var(--black);
+}
+
+.classes h3 {
+  color: var(--neon);
+}
+
+.classes p {
+  color: var(--on-dark);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}

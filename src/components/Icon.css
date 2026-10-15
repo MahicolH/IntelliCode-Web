@@ -1,0 +1,7 @@
+.icon {
+  width: 26px;
+  height: 26px;
+  flex: none;
+  color: var(--green);
+  margin-top: 2px;
+}

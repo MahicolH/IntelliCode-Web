@@ -1,0 +1,33 @@
+.about {
+  grid-template-columns: 1fr;
+}
+
+.video {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 9/16;
+  object-fit: cover;
+  background: var(--black);
+  border-radius: var(--r);
+  justify-self: center;
+}
+
+.about p {
+  color: var(--muted);
+  margin-top: 14px;
+  max-width: 52ch;
+}
+
+.about h2 {
+  margin-bottom: 6px;
+}
+
+@media (min-width: 860px) {
+  .about {
+    grid-template-columns: 340px 1fr;
+  }
+
+  .video {
+    justify-self: start;
+  }
+}

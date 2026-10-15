@@ -1,0 +1,109 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--black);
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header :focus-visible {
+  outline-color: var(--neon);
+}
+
+.header .bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 68px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.logo svg {
+  color: var(--neon);
+}
+
+.nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  background: var(--black-2);
+  padding: 10px 20px 18px;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.nav.open {
+  display: flex;
+}
+
+.nav a {
+  padding: 12px 0;
+  text-decoration: none;
+  font-weight: 500;
+  color: #e9e9e3;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.nav a:hover {
+  color: var(--neon);
+}
+
+.nav .nav-app {
+  color: var(--neon);
+  font-weight: 600;
+}
+
+.burger {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid #3a3a3a;
+  background: transparent;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+@media (min-width: 860px) {
+  .nav {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    gap: 30px;
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+
+  .nav a {
+    padding: 0;
+    border: 0;
+    font-size: 0.95rem;
+  }
+
+  .burger {
+    display: none;
+  }
+}

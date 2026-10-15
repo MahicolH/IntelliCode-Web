@@ -1,0 +1,43 @@
+.services {
+  list-style: none;
+  margin-top: 40px;
+  display: grid;
+  gap: 0 48px;
+  grid-template-columns: 1fr;
+}
+
+.svc {
+  display: flex;
+  gap: 16px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+
+.svc p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.svc.featured {
+  background: var(--black);
+  color: #fff;
+  border: 0;
+  border-radius: var(--r);
+  padding: 26px;
+  margin: 10px 0;
+}
+
+.svc.featured p {
+  color: var(--on-dark);
+}
+
+.svc.featured .icon {
+  color: var(--neon);
+}
+
+@media (min-width: 760px) {
+  .services {
+    grid-template-columns: 1fr 1fr;
+  }
+}

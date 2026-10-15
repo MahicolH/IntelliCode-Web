@@ -1,0 +1,20 @@
+.contact {
+  background: var(--black);
+  color: #fff;
+  border-radius: 32px;
+  padding: 56px 28px;
+  text-align: center;
+}
+
+.contact :focus-visible {
+  outline-color: var(--neon);
+}
+
+.contact p {
+  color: var(--on-dark);
+  margin-top: 12px;
+}
+
+.contact .actions {
+  justify-content: center;
+}
