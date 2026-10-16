@@ -1,7 +1,7 @@
 import './About.css';
 export default function About() {
   return (
-    <section id="quien-soy" className="wrap section split about">
+    <section id="quien-soy" className="wrap section split about" data-tone="light">
       <video className="video" controls preload="none" playsInline poster="/poster.jpg" aria-label="Video de presentación de Mahicol">
         <source src="/video-presentacion.mp4" type="video/mp4" />
       </video>

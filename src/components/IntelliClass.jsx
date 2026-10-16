@@ -2,7 +2,7 @@ import './IntelliClass.css';
 import { SITE } from '../config';
 export default function IntelliClass() {
   return (
-    <section id="intelliclass" className="band">
+    <section id="intelliclass" className="band" data-tone="dark">
       <div className="wrap section split">
         <div>
           <h2>IntelliClass: aprende haciendo</h2>

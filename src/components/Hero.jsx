@@ -4,7 +4,7 @@ import HeroBackground from './HeroBackground';
 import TechMarquee from './TechMarquee';
 export default function Hero() {
   return (
-    <section id="inicio" className="hero screen">
+    <section id="inicio" className="hero screen" data-tone="dark">
       <HeroBackground />
       <div className="hero-veil" aria-hidden="true" />
       <div className="wrap hero-grid">

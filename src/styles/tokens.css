@@ -12,4 +12,6 @@
   --line: #d6d2c2;
   --w: clamp(1120px, 80vw, 1440px);
   --header-h: 84px;
+  --r-lg: 28px;
+  --tex-o: 0.12;
 }

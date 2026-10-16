@@ -2,7 +2,7 @@ import './Contact.css';
 import { SITE } from '../config';
 export default function Contact() {
   return (
-    <section id="contacto" className="wrap section">
+    <section id="contacto" className="wrap section" data-tone="light">
       <div className="contact">
         <h2>Cuéntame tu proyecto</h2>
         <p>Escríbenos y te respondemos con una propuesta clara.</p>

@@ -1,7 +1,7 @@
 import './Footer.css';
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" data-tone="dark">
       <div className="wrap bar">
         <span>© {new Date().getFullYear()} IntelliCode Analytics & Software</span>
         <span>Software a tu medida</span>

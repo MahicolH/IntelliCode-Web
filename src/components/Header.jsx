@@ -1,11 +1,13 @@
 import './Header.css';
 import { useState } from 'react';
 import { SITE } from '../config';
+import useHeaderTheme from '../hooks/useHeaderTheme';
 const links = [['servicios', 'Servicios'], ['intelliclass', 'IntelliClass'], ['proyectos', 'Proyectos'], ['quien-soy', 'Equipo'], ['contacto', 'Contacto']];
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const theme = useHeaderTheme();
   return (
-    <header className="header">
+    <header className="header" data-theme={theme}>
       <div className="wrap bar">
         <a className="logo" href="#inicio" aria-label="IntelliCode, inicio">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" /></svg>

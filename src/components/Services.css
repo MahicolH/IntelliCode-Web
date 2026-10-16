@@ -1,42 +1,239 @@
 .services {
-  list-style: none;
-  margin-top: 40px;
+  position: relative;
+  min-height: 100dvh;
+  padding: clamp(72px, 12vh, 140px) 0 clamp(96px, 16vh, 180px);
+  background: var(--cream);
+  overflow: clip;
+}
+
+.services .wrap {
+  position: relative;
+}
+
+.services-head,
+.svc {
+  opacity: 0;
+}
+
+.services-head {
+  text-align: center;
+}
+
+.services-head h2 {
+  font-size: clamp(2.1rem, 1.4rem + 3vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.services-head h2 span {
+  display: block;
+  text-wrap: balance;
+}
+
+.services-head .lead {
+  max-width: 46ch;
+  margin: 20px auto 0;
+  font-size: clamp(1rem, 0.9rem + 0.4vw, 1.2rem);
+  text-wrap: balance;
+}
+
+.services-grid {
   display: grid;
-  gap: 0 48px;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(16px, 1.6vw, 28px);
+  margin-top: clamp(48px, 9vh, 104px);
 }
 
 .svc {
+  --d: 0s;
+  grid-column: span 5;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: clamp(300px, 38vh, 440px);
+  padding: clamp(24px, 2.4vw, 40px);
+  border: 1px solid transparent;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 22px 44px -28px rgba(11, 122, 66, 0.3);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.svc:nth-child(even) {
+  --d: 0.12s;
+}
+
+.svc-wide {
+  grid-column: span 7;
+}
+
+.svc.in,
+.services-head.in {
+  opacity: 1;
+  animation: svc-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s) backwards;
+}
+
+.svc-body {
   display: flex;
-  gap: 16px;
-  padding: 22px 0;
-  border-top: 1px solid var(--line);
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.svc-tag {
+  color: var(--muted);
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+}
+
+.svc h3 {
+  max-width: 17em;
+  font-size: clamp(1.35rem, 1.05rem + 0.9vw, 2rem);
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .svc p {
+  max-width: 42ch;
+  margin-top: 12px;
   color: var(--muted);
   font-size: 0.95rem;
-  margin-top: 4px;
+  text-wrap: pretty;
 }
 
-.svc.featured {
+.svc-media {
+  display: grid;
+  place-items: center;
+  margin: calc(clamp(8px, 1.5vw, 24px) * -1) 0;
+  animation: svc-float 6s ease-in-out infinite;
+}
+
+.svc-media img {
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: contain;
+  opacity: 0;
+}
+
+.svc.in .svc-media img {
+  opacity: 1;
+  animation: svc-pop 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) calc(var(--d) + 0.25s) backwards;
+}
+
+.svc-cta {
   background: var(--black);
   color: #fff;
-  border: 0;
-  padding: 26px;
-  margin: 10px 0;
+  box-shadow: 0 22px 44px -28px rgba(10, 10, 10, 0.6);
 }
 
-.svc.featured p {
+.svc-cta .svc-tag,
+.svc-cta p {
   color: var(--on-dark);
 }
 
-.svc.featured .icon {
-  color: var(--neon);
+.svc-cta .btn {
+  margin-top: 28px;
 }
 
-@media (min-width: 760px) {
-  .services {
-    grid-template-columns: 1fr 1fr;
+.svc-cta :focus-visible {
+  outline-color: var(--neon);
+}
+
+@keyframes svc-rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes svc-pop {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes svc-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (hover: hover) {
+  .svc:hover {
+    border-color: rgba(11, 122, 66, 0.3);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      0 30px 56px -26px rgba(11, 122, 66, 0.42);
+    transform: translateY(-4px);
+  }
+
+  .svc-cta:hover {
+    border-color: var(--neon);
+    box-shadow: 0 30px 56px -26px rgba(29, 255, 124, 0.35);
+  }
+}
+
+@media (min-width: 860px) {
+  .svc-wide {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 42%);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 859px) {
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .svc,
+  .svc-wide {
+    grid-column: 1 / -1;
+    min-height: 0;
+  }
+
+  .svc-body {
+    gap: 28px;
+  }
+
+  .svc-media {
+    order: -1;
+    max-width: 280px;
+    margin: 0 auto 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-head,
+  .svc,
+  .svc-media img {
+    opacity: 1;
+  }
+
+  .svc.in,
+  .services-head.in,
+  .svc.in .svc-media img,
+  .svc-media {
+    animation: none;
   }
 }

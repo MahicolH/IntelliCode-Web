@@ -2,7 +2,7 @@ import './Projects.css';
 import { projects } from '../data/projects';
 export default function Projects() {
   return (
-    <section id="proyectos" className="wrap section">
+    <section id="proyectos" className="wrap section" data-tone="light">
       <h2>Proyectos</h2>
       <p className="lead">Ejemplos del tipo de soluciones que construimos.</p>
       <div className="projects">
