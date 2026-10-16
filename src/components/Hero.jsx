@@ -1,10 +1,12 @@
 import './Hero.css';
 import { SITE } from '../config';
-import foto from '../assets/foto-mahicol.jpg';
-const chips = ['Páginas web', 'Apps', 'Excel', 'Automatización'];
+import HeroBackground from './HeroBackground';
+import TechMarquee from './TechMarquee';
 export default function Hero() {
   return (
-    <section id="inicio" className="hero">
+    <section id="inicio" className="hero screen">
+      <HeroBackground />
+      <div className="hero-veil" aria-hidden="true" />
       <div className="wrap hero-grid">
         <div className="hero-text">
           <h1>Software a la medida que hace crecer tu negocio</h1>
@@ -17,16 +19,9 @@ export default function Hero() {
             </a>
             {SITE.appUrl && <a className="btn btn-dark" href={SITE.appUrl}>Ingresar a la app</a>}
           </div>
-          <p className="note" aria-hidden="true">
-            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M34 6C20 6 10 14 8 30M8 30l-4-6M8 30l7-3" /></svg>
-            Cuéntame tu idea
-          </p>
         </div>
-        <figure className="stage">
-          <img className="avatar" src={foto} alt="Mahicol Hurtado, fundador de IntelliCode" />
-          {chips.map((c, i) => <span key={c} className={'chip c' + (i + 1)}>{c}</span>)}
-        </figure>
       </div>
+      <TechMarquee />
     </section>
   );
 }

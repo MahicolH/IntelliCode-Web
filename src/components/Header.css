@@ -2,9 +2,9 @@
   position: sticky;
   top: 0;
   z-index: 20;
+  padding: 12px;
   background: var(--black);
   color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .header :focus-visible {
@@ -12,16 +12,21 @@
 }
 
 .header .bar {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 16px;
-  min-height: 68px;
+  min-height: 60px;
+  max-width: 1120px;
+  background: var(--black);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   font-weight: 700;
   font-size: 1.1rem;
   text-decoration: none;
@@ -29,13 +34,18 @@
 }
 
 .logo svg {
+  width: 34px;
+  height: 34px;
+  padding: 6px;
   color: var(--neon);
+  background: var(--black);
+  border-radius: 10px;
 }
 
 .nav {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 8px);
   left: 0;
   right: 0;
   flex-direction: column;
@@ -87,6 +97,19 @@
 }
 
 @media (min-width: 860px) {
+  .header .bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+
+  .header .bar > .btn {
+    justify-self: end;
+  }
+
   .nav {
     display: flex;
     position: static;
@@ -101,6 +124,7 @@
     padding: 0;
     border: 0;
     font-size: 0.95rem;
+    font-weight: 600;
   }
 
   .burger {

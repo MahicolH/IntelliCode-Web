@@ -1,5 +1,5 @@
 :root {
-  --black: #151515; /* negro mate: color inicial del sitio */
+  --black: #0a0a0a;
   --black-2: #1d1d1d;
   --line-dark: #2e2e2e;
   --on-dark: #b8b8b0;
@@ -7,9 +7,10 @@
   --paper: #fbfaf5;
   --ink: #141414;
   --neon: #1dff7c;
-  --green: #0b7a42; /* verde profundo para texto sobre crema */
+  --green: #0b7a42;
   --muted: #59604d;
   --line: #d6d2c2;
   --r: 22px;
-  --w: 1120px;
+  --w: clamp(1120px, 80vw, 1600px);
+  --header-h: 84px;
 }

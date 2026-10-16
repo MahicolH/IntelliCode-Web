@@ -7,7 +7,7 @@
 html {
   background: var(--black);
   scroll-behavior: smooth;
-  scroll-padding-top: 84px;
+  scroll-padding-top: var(--header-h);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -79,6 +79,14 @@ h3 {
   margin-top: 12px;
 }
 
+.screen {
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100dvh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .split {
   display: grid;
   gap: 36px;
@@ -114,8 +122,13 @@ h3 {
   border: 1.5px solid transparent;
   transition:
     background 0.18s,
-    border-color 0.18s;
+    border-color 0.18s,
+    transform 0.18s;
   text-align: center;
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .btn-primary {

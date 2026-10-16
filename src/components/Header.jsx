@@ -1,7 +1,7 @@
 import './Header.css';
 import { useState } from 'react';
 import { SITE } from '../config';
-const links = [['servicios', 'Servicios'], ['intelliclass', 'IntelliClass'], ['proyectos', 'Proyectos'], ['quien-soy', 'Quién soy'], ['contacto', 'Contacto']];
+const links = [['servicios', 'Servicios'], ['intelliclass', 'IntelliClass'], ['proyectos', 'Proyectos'], ['quien-soy', 'Equipo'], ['contacto', 'Contacto']];
 export default function Header() {
   const [open, setOpen] = useState(false);
   return (
@@ -15,7 +15,7 @@ export default function Header() {
           {links.map(([id, t]) => <a key={id} href={'#' + id} onClick={() => setOpen(false)}>{t}</a>)}
           {SITE.appUrl && <a className="nav-app" href={SITE.appUrl}>Ingresar a la app</a>}
         </nav>
-        <a className="btn btn-primary btn-sm" href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">Hablemos</a>
+        <a className="btn btn-primary btn-sm" href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">Empieza ya</a>
         <button className="burger" aria-expanded={open} aria-controls="menu" aria-label={open ? 'Cerrar menú' : 'Abrir menú'} onClick={() => setOpen(!open)}><span /><span /></button>
       </div>
     </header>
