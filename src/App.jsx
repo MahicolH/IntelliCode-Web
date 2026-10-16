@@ -8,6 +8,21 @@ import About from './components/About';
 import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+
 export default function App() {
-  return (<div className="app"><Header /><main><Hero /><Services /><IntelliClass /><Projects /><About /><Faq /><Contact /></main><Footer /></div>);
+  return (
+    <div className="app">
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <IntelliClass />
+        <Projects />
+        <About />
+        <Faq />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
 }

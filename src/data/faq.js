@@ -1,4 +1,3 @@
-// Respuestas provisionales: ajústalas a tu forma real de trabajar.
 export const faq = [
   { q: '¿Qué tipo de proyectos desarrollas?', a: 'Páginas web, aplicaciones, sistemas para negocios, automatizaciones y soluciones en Excel. Si tu proceso es único, lo construimos a la medida.' },
   { q: '¿Cuánto cuesta y cuánto tarda mi proyecto?', a: 'Depende del alcance. Cuéntame qué necesitas por WhatsApp o correo y te respondo con una propuesta clara de costo y tiempos.' },

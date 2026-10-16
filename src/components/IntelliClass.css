@@ -22,7 +22,6 @@
 
 .classes > div {
   border: 1px solid var(--line-dark);
-  border-radius: var(--r);
   padding: 22px 24px;
   background: var(--black);
 }

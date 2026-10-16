@@ -23,7 +23,6 @@
   background: var(--black);
   color: #fff;
   border: 0;
-  border-radius: var(--r);
   padding: 26px;
   margin: 10px 0;
 }

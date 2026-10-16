@@ -8,7 +8,6 @@
   aspect-ratio: 9/16;
   object-fit: cover;
   background: var(--black);
-  border-radius: var(--r);
   justify-self: center;
 }
 
