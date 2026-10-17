@@ -1,88 +1,50 @@
 .header {
-  --hd-bg: rgba(10, 10, 10, 0.72);
-  --hd-fg: #fff;
-  --hd-line: rgba(255, 255, 255, 0.1);
-  --hd-menu: rgba(18, 18, 18, 0.96);
-  --hd-item-line: var(--line-dark);
-  --hd-item-fg: #e9e9e3;
-  --hd-hover: var(--neon);
-  --hd-burger: #3a3a3a;
-  --hd-logo-ring: rgba(255, 255, 255, 0.14);
-  position: fixed;
+  --hx: clamp(20px, 3vw, 56px);
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 20;
-  padding: 12px;
-  color: var(--hd-fg);
-  pointer-events: none;
-}
-
-.header[data-theme="light"] {
-  --hd-bg: rgba(251, 250, 245, 0.78);
-  --hd-fg: var(--ink);
-  --hd-line: rgba(20, 20, 20, 0.14);
-  --hd-menu: rgba(251, 250, 245, 0.97);
-  --hd-item-line: var(--line);
-  --hd-item-fg: var(--ink);
-  --hd-hover: var(--green);
-  --hd-burger: rgba(20, 20, 20, 0.28);
-  --hd-logo-ring: transparent;
+  z-index: 5;
+  color: #fff;
 }
 
 .header :focus-visible {
-  outline-color: var(--hd-hover);
+  outline-color: var(--neon);
 }
 
 .header .bar {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 16px;
-  min-height: 60px;
-  max-width: 1120px;
-  background: var(--hd-bg);
-  border: 1px solid var(--hd-line);
-  border-radius: 14px;
-  -webkit-backdrop-filter: blur(14px) saturate(1.2);
-  backdrop-filter: blur(14px) saturate(1.2);
-  pointer-events: auto;
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease;
+  min-height: var(--header-h);
+  padding: 0 var(--hx);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-right: auto;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   text-decoration: none;
 }
 
 .logo svg {
-  width: 34px;
-  height: 34px;
-  padding: 6px;
   color: var(--neon);
-  background: var(--black);
-  border-radius: 10px;
-  box-shadow: inset 0 0 0 1px var(--hd-logo-ring);
 }
 
 .nav {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
+  top: 100%;
   right: 0;
+  left: 0;
   flex-direction: column;
-  padding: 10px 20px 18px;
-  background: var(--hd-menu);
-  border: 1px solid var(--hd-line);
-  border-radius: 14px;
+  padding: 8px var(--hx) 20px;
+  background: var(--black);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .nav.open {
@@ -90,21 +52,20 @@
 }
 
 .nav a {
-  padding: 12px 0;
-  color: var(--hd-item-fg);
+  padding: 14px 0;
+  color: rgba(255, 255, 255, 0.78);
   font-weight: 500;
   text-decoration: none;
-  border-bottom: 1px solid var(--hd-item-line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: color 0.2s ease;
 }
 
 .nav a:hover {
-  color: var(--hd-hover);
+  color: #fff;
 }
 
 .nav .nav-app {
-  color: var(--hd-hover);
-  font-weight: 600;
+  color: var(--neon);
 }
 
 .burger {
@@ -116,26 +77,15 @@
   width: 44px;
   height: 44px;
   background: transparent;
-  border: 1.5px solid var(--hd-burger);
-  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
   cursor: pointer;
 }
 
 .burger span {
   width: 18px;
   height: 2px;
-  background: var(--hd-fg);
-  border-radius: 2px;
-}
-
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .header {
-    --hd-bg: rgba(10, 10, 10, 0.96);
-  }
-
-  .header[data-theme="light"] {
-    --hd-bg: rgba(251, 250, 245, 0.96);
-  }
+  background: #fff;
 }
 
 @media (min-width: 860px) {
@@ -156,7 +106,7 @@
     display: flex;
     position: static;
     flex-direction: row;
-    gap: 30px;
+    gap: 36px;
     padding: 0;
     background: none;
     border: 0;
@@ -164,9 +114,15 @@
 
   .nav a {
     padding: 0;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.9rem;
     border: 0;
+  }
+
+  .nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--neon);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 8px;
   }
 
   .burger {

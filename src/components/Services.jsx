@@ -14,7 +14,7 @@ export default function Services() {
         </header>
         <div className="services-grid">
           {services.map((s) => (
-            <article key={s.id} className={'svc' + (s.wide ? ' svc-wide' : '') + (s.cta ? ' svc-cta' : '')} data-reveal>
+            <article key={s.id} className={'svc svc-' + s.id + (s.wide ? ' svc-wide' : '')} data-reveal>
               <div className="svc-body">
                 <span className="svc-tag">{s.tag}</span>
                 <div className="svc-copy">

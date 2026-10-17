@@ -212,6 +212,18 @@
     min-height: 0;
   }
 
+  .svc-empresarial {
+    order: 1;
+  }
+
+  .svc-medida {
+    order: 2;
+  }
+
+  .svc-cta {
+    order: 3;
+  }
+
   .svc-body {
     gap: 28px;
   }

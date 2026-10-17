@@ -1,37 +1,213 @@
 .band {
-  background: var(--black-2);
+  position: relative;
+  background: var(--black);
   color: #fff;
+  font-size: clamp(16px, 0.47vw + 10px, 21px);
+  overflow: hidden;
 }
 
 .band :focus-visible {
   outline-color: var(--neon);
 }
 
-.band .lead {
-  color: var(--on-dark);
+.band-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 55% 62% at 28% 50%,
+      rgba(10, 10, 10, 0.94) 0%,
+      rgba(10, 10, 10, 0.72) 55%,
+      rgba(10, 10, 10, 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      var(--black) 0%,
+      transparent 18%,
+      transparent 82%,
+      var(--black) 100%
+    );
 }
 
-.band .btn {
-  margin-top: 28px;
-}
-
-.classes {
+.band .band-grid {
+  position: relative;
+  flex: 1;
   display: grid;
-  gap: 16px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 48px;
+  max-width: clamp(1120px, 84vw, 1600px);
+  align-items: center;
+  padding-top: clamp(72px, 10vh, 120px);
+  padding-bottom: clamp(72px, 10vh, 120px);
 }
 
-.classes > div {
-  border: 1px solid var(--line-dark);
-  padding: 22px 24px;
-  background: var(--black);
+.band-text,
+.class-card {
+  opacity: 0;
 }
 
-.classes h3 {
-  color: var(--neon);
+.band-text.in,
+.class-card.in {
+  opacity: 1;
+  animation: band-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s) backwards;
 }
 
-.classes p {
+.band h2 {
+  font-size: clamp(2.2rem, 0.9rem + 2.8vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.band .lead {
+  max-width: 52ch;
+  margin-top: 1em;
   color: var(--on-dark);
-  font-size: 0.95rem;
-  margin-top: 4px;
+  font-size: 1.1em;
+}
+
+.band-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin: 1.2em 0;
+  color: var(--neon);
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.band-link span {
+  transition: transform 0.25s ease;
+}
+
+.band-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+.band-link:hover span {
+  transform: translateX(4px);
+}
+
+.band .icon {
+  width: 2em;
+  height: 2em;
+  margin: 0;
+  color: #fff;
+}
+
+.band-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(16px, 1.6vw, 32px);
+}
+
+.class-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2em;
+  padding: clamp(20px, 2.2vw, 44px);
+  background: rgba(14, 14, 14, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--r-lg);
+  transition: border-color 0.3s ease;
+}
+
+.class-card:nth-child(even) {
+  --d: 0.12s;
+}
+
+.class-tag {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8em;
+  letter-spacing: 0.01em;
+}
+
+.class-body h3 {
+  margin-top: 0.9em;
+  font-size: 1.4em;
+}
+
+.class-body p {
+  margin-top: 0.5em;
+  color: var(--on-dark);
+  font-size: 0.95em;
+}
+
+.class-body ul {
+  display: grid;
+  gap: 0.8em;
+  margin-top: 1.3em;
+  padding: 0;
+  list-style: none;
+}
+
+.class-body li {
+  position: relative;
+  padding-left: 1.1em;
+  color: var(--on-dark);
+  font-size: 0.9em;
+}
+
+.class-body li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 0.35em;
+  height: 0.35em;
+  background: var(--neon);
+  border-radius: 50%;
+}
+
+.class-body strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+@keyframes band-rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 640px) {
+  .band-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 860px) {
+  .band .band-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    gap: clamp(40px, 4vw, 80px);
+  }
+}
+
+@media (hover: hover) {
+  .class-card:hover {
+    border-color: rgba(29, 255, 124, 0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .band-text,
+  .class-card {
+    opacity: 1;
+  }
+
+  .band-text.in,
+  .class-card.in {
+    animation: none;
+  }
 }
