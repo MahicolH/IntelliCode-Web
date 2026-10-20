@@ -6,7 +6,7 @@ export default function Projects() {
   const ref = useReveal();
 
   return (
-    <section id="proyectos" className="projects-section screen" data-tone="dark" ref={ref} aria-labelledby="proyectos-titulo">
+    <section id="proyectos" className="projects-section" data-tone="dark" ref={ref} aria-labelledby="proyectos-titulo">
       <div className="projects-wrap">
         <header className="projects-head" data-reveal>
           <p className="projects-eyebrow">Portafolio &amp; casos de éxito</p>

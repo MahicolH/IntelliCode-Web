@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import IntelliClass from './components/IntelliClass';
 import Projects from './components/Projects';
-import About from './components/About';
+import Team from './components/Team';
 import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -18,7 +18,7 @@ export default function App() {
         <Services />
         <IntelliClass />
         <Projects />
-        <About />
+        <Team />
         <Faq />
         <Contact />
       </main>

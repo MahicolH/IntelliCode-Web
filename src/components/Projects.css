@@ -15,7 +15,7 @@
   width: 100%;
   max-width: var(--w-wide);
   margin: 0 auto;
-  padding: clamp(72px, 10vh, 120px) 20px clamp(96px, 16vh, 180px);
+  padding: clamp(56px, 8.5vh, 104px) 20px;
 }
 
 .projects-head,

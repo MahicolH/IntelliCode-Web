@@ -10,6 +10,8 @@ const P = {
   devices: <><rect x="2" y="4" width="14" height="10" rx="1.5" /><path d="M9 14v4M6 18h6" /><rect x="17" y="9" width="5" height="10" rx="1" /></>,
   clipboard: <><rect x="4" y="4" width="16" height="18" rx="2" /><rect x="9" y="2" width="6" height="4" rx="1" /><path d="M9 18l1-3 6-6 2 2-6 6z" /></>,
   book: <path d="M3 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z" />,
+  whatsapp: <><path d="M3 21l1.7-5A9 9 0 1 1 8.2 19.4z" /><path d="M9.2 8.6c-.3.6-.2 1.6.8 3 1.1 1.5 2.3 2.4 3.6 2.8.8.2 1.4-.2 1.8-.9l-1.6-1.1-.8.6c-.8-.4-1.5-1.1-2-1.9l.6-.8-1-1.6z" /></>,
+  mail: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></>,
 };
 export default function Icon({ name }) {
   return (

@@ -8,7 +8,7 @@ export default function IntelliClass() {
   const ref = useReveal();
 
   return (
-    <section id="intelliclass" className="band screen" data-tone="dark" ref={ref}>
+    <section id="intelliclass" className="band" data-tone="dark" ref={ref}>
       <div className="wrap band-grid">
         <div className="band-text" data-reveal>
           <h2>IntelliClass: aprende haciendo</h2>
