@@ -1,7 +1,6 @@
 import './IntelliClass.css';
 import { SITE } from '../config';
 import Icon from './Icon';
-import HeroBackground from './HeroBackground';
 import useReveal from '../hooks/useReveal';
 import { classes } from '../data/classes';
 
@@ -10,8 +9,6 @@ export default function IntelliClass() {
 
   return (
     <section id="intelliclass" className="band screen" data-tone="dark" ref={ref}>
-      <HeroBackground />
-      <div className="band-veil" aria-hidden="true" />
       <div className="wrap band-grid">
         <div className="band-text" data-reveal>
           <h2>IntelliClass: aprende haciendo</h2>

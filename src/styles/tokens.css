@@ -13,5 +13,7 @@
   --w: clamp(1120px, 80vw, 1440px);
   --header-h: 84px;
   --r-lg: 28px;
+  --r-sm: 10px;
+  --w-wide: clamp(1120px, 84vw, 1600px);
   --tex-o: 0.12;
 }

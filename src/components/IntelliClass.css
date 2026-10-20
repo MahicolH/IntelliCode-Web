@@ -10,33 +10,13 @@
   outline-color: var(--neon);
 }
 
-.band-veil {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      ellipse 55% 62% at 28% 50%,
-      rgba(10, 10, 10, 0.94) 0%,
-      rgba(10, 10, 10, 0.72) 55%,
-      rgba(10, 10, 10, 0) 100%
-    ),
-    linear-gradient(
-      180deg,
-      var(--black) 0%,
-      transparent 18%,
-      transparent 82%,
-      var(--black) 100%
-    );
-}
-
 .band .band-grid {
   position: relative;
   flex: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 48px;
-  max-width: clamp(1120px, 84vw, 1600px);
+  max-width: var(--w-wide);
   align-items: center;
   padding-top: clamp(72px, 10vh, 120px);
   padding-bottom: clamp(72px, 10vh, 120px);
@@ -111,7 +91,7 @@
   flex-direction: column;
   gap: 2.2em;
   padding: clamp(20px, 2.2vw, 44px);
-  background: rgba(14, 14, 14, 0.92);
+  background: rgba(20, 20, 20, 0.94);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--r-lg);
   transition: border-color 0.3s ease;
